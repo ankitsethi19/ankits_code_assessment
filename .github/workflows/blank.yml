@@ -1,0 +1,19 @@
+# Created to run test whenever pull request is raised on main branch
+
+name: automated_test
+
+on:
+  pull_request:
+    branches: [ "main" ]
+    
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Test with pytest
+        run: |
+          cd test && pytest
