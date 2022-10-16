@@ -27,4 +27,5 @@ jobs:
           export FLASK_APP=hello
       - name: Test with pytest
         run: |
-          cd tests && pytest
+          cd tests
+          pytest
