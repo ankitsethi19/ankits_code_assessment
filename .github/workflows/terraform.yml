@@ -60,7 +60,7 @@ jobs:
       run: |
         sleep 120
 
-    - name: Terraform destory
+    - name: Terraform destroy
       run: |
         cd infra
         terraform destroy -auto-approve -input=false
