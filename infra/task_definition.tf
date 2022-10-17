@@ -9,9 +9,7 @@ resource "aws_ecs_task_definition" "api_task_definition" {
   container_definitions = jsonencode([
     {
       name         = var.app_name
-      #image        = "${data.aws_caller_identity.current.account_id}.dkr.ecr.${var.region}.amazonaws.com/${lower(var.app_name)}:${var.app_version}"
-      image        = "docker.io/ankits19/travel_perk_app:latest"
-      #image        = "${data.aws_ecr_repository.app.repository_url}/${lower(var.app_name)}:${var.app_version}"
+      image        = var.image_url
       cpu          = 10
       memory       = 128
       essential    = true

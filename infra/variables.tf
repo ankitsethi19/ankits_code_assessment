@@ -19,6 +19,10 @@ variable "app_name" {
   description = "Name of application"
 }
 
+variable "image_url" {
+  type = string
+  description = "URL for the docker image"
+}
 variable "api_memory" {
   type = number
   description = "Memory allocated for application for task"
