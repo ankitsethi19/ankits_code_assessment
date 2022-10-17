@@ -35,7 +35,7 @@ As AWS is used public cloud platform, so core services to implement this applica
 
 Below is the architecture for the application deployed in AWS.
 
-![Architecture Diagram](./architecture.png)
+![Architecture Diagram](screenshots/architecture.png)
 
 **Steps to deploy**
 
@@ -45,7 +45,7 @@ Above command will create resources need to make the application running in AWS 
 
 Post deployment you will get load balancer DNS name which can be used to access application.
 
-![Terraform output](./terraform_apply.png)
+![Terraform output](screenshots/terraform_apply.png)
 
 ### CI-CD deployment
 
@@ -55,18 +55,18 @@ When ever there will be pull request raised for `main` branch, `automated_test` 
 1. If tests **failed**, github won't allow user to merge the request to main branch due to protection rule added to main branch.
 Please refer below example:
 
-![build_failed](./build_failed.png)
+![build_failed](screenshots/build_failed.png)
 
 2. If tests **passed**, github will allow user to merge the request to main branch as all the status checks passed.
 Please refer below example:
 
-![build_failed](./build_passed.png)
+![build_failed](screenshots/build_passed.png)
 
 #### Automated deployment
 Post merging there is one more workflow to run and deploy terraform resources to make our application running, this will only be invoked when changes are merged to main branch.
 This will deploy application using automation terraform operations using github actions.
 
-![automated_Deployment](./terraform_workflow.png)
+![automated_Deployment](screenshots/terraform_workflow.png)
 
 As this application is created for test, this workflow will also destroy the AWS resources. We can also create another task to do so.
 
