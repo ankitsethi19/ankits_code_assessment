@@ -56,8 +56,11 @@ jobs:
         cd infra
         terraform apply -auto-approve -input=false
 
-    - name: Terraform destroy
-      if: ${{ secrets.DESTROY }} == 'true'
+    - name: Sleep 2 minutes
+      run: |
+        sleep 120
+
+    - name: Terraform destory
       run: |
         cd infra
         terraform destroy -auto-approve -input=false
