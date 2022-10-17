@@ -1,6 +1,7 @@
 application_services = ["hello_app"]
 region = "eu-west-2"
 prefix    = "ankits19"
+image_url = "docker.io/ankits19/travel_perk_app:latest"
 
 listener_port = 80
 app_port   = 5000
