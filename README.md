@@ -62,6 +62,13 @@ Please refer below example:
 
 ![build_failed](./build_passed.png)
 
+#### Automated deployment
+Post merging there is one more workflow to run and deploy terraform resources to make our application running, this will only be invoked when changes are merged to main branch.
+This will deploy application using automation terraform operations using github actions.
+
+![automated_Deployment](./terraform_workflow.png)
+
+As this application is created for test, this workflow will also destroy the AWS resources. We can also create another task to do so.
 
 ## Destory Application
 
